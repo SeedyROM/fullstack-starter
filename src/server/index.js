@@ -6,10 +6,11 @@ const webpack = require('webpack')
 const webpackConfig = require('../../webpack.config')
 
 const app = express()
-const config = await configHelper.loadConfig(config_name)
 const compiler = webpack(webpackConfig)
 
 const configureServer = async (config_name) => {
+    // Load our config
+    const config = await configHelper.loadConfig(config_name)
     // Serve our client
     app.use(express.static(path.resolve(__dirname,  '../client/')))
     // app.use(express.static(path.resolve(__dirname,  '../../build/')))    

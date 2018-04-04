@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon --watch src --exec 'node src/server/index.js'",
     "test": "npm-run-all -s test:**",
-    "test:client": "NODE_ENV=test mocha --exit --require babel-core/register -w ./test/helpers/browser.js  ./test/client/**/*.spec.js",
+    "test:client": "NODE_ENV=test mocha --require babel-core/register -w ./test/helpers/browser.js --exit ./test/client/**/*.spec.js",
     "test:server": "NODE_ENV=test mocha --exit ./test/server/**/*.spec.js"
   },
   "keywords": [],

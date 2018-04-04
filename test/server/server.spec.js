@@ -7,11 +7,10 @@ chai.use(chaiHttp);
 const app = require('../../src/server')
 
 describe('Client entry rendering', () => {
-    it('should render index.html', async function() {
+    it('should render index.html', async () => {
         const resp = await chai
             .request(app)
             .get('/')
-            .done()
 
         expect(resp.status).to.equal(200)
     })
