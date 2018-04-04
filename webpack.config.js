@@ -18,6 +18,11 @@ const config = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
     ],
+    externals: {
+        'cheerio': 'window',
+        'react/lib/ExecutionEnvironment': true,
+        'react/lib/ReactContext': true,
+    },
     module: {
         rules: [
             {
