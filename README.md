@@ -1,6 +1,6 @@
 # ⛏ fullstack-starter
 
-Another f\*\*king boilerplate for Express and React.
+Another f\*\*king boilerplate for Express and React, it also has unit testing support with Mocha, Chai and Enzyme.
 
 **This one is full stack though?**
 
