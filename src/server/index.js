@@ -5,12 +5,11 @@ const configHelper = require('./config')
 const webpack = require('webpack')
 const webpackConfig = require('../../webpack.config')
 
+const app = express()
+const config = await configHelper.loadConfig(config_name)
+const compiler = webpack(webpackConfig)
 
 const configureServer = async (config_name) => {
-    const app = express()
-    const config = await configHelper.loadConfig(config_name)
-    const compiler = webpack(webpackConfig)
-
     // Serve our client
     app.use(express.static(path.resolve(__dirname,  '../client/')))
     // app.use(express.static(path.resolve(__dirname,  '../../build/')))    
@@ -37,3 +36,5 @@ configureServer('development')
 .catch((error) => {
     throw error
 })
+
+module.exports = app

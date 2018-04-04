@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all server:express",
-    "server:express": "nodemon --watch src --exec 'node src/server/index.js'",
-    "test": "NODE_ENV=test mocha --require babel-core/register -w ./test/helpers/browser.js  ./test/**/*.spec.js"
+    "start": "nodemon --watch src --exec 'node src/server/index.js'",
+    "test": "npm-run-all -s test:**",
+    "test:client": "NODE_ENV=test mocha --exit --require babel-core/register -w ./test/helpers/browser.js  ./test/client/**/*.spec.js",
+    "test:server": "NODE_ENV=test mocha --exit ./test/server/**/*.spec.js"
   },
   "keywords": [],
   "author": "",
